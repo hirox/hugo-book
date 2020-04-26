@@ -4,7 +4,11 @@
 
 {{- template "_internal/opengraph.html" . -}}
 
-<title>{{ partial "docs/title" . }} | {{ .Site.Title -}}</title>
+{{ with partial "docs/title" . }}
+<title>{{ . }} | {{ $.Site.Title -}}</title>
+{{ else }}
+<title>{{ .Site.Title -}}</title>
+{{ end }}
 <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
 
 {{- range .Translations }}

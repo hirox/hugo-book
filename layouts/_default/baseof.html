@@ -73,6 +73,7 @@
 
 {{ define "main" }}
   <article class="markdown">
+    {{ partial "docs/post-meta-date" . }}
     {{- .Content -}}
   </article>
 {{ end }}
